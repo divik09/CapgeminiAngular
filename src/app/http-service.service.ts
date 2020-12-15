@@ -9,7 +9,7 @@ export class HttpServiceService {
   getHeader() {
     let httpOptions = {
       headers: new HttpHeaders({
-        withCredentials: "true"
+        withCredentials: "false"
       })
     };
 

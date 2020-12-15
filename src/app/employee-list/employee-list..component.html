@@ -1,0 +1,46 @@
+<div align="center">
+	<br><br>
+	<div>
+		<h1>Employee List</h1>
+	</div>
+	<br><br>
+	<input type="text"  #searchByName style="height: 7px;width:150px;padding: 10px;border-radius: 20px;" placeholder="Search By Name" >&nbsp;&nbsp;
+	<input type="text" [(ngModel)]="form.age" name="age" style="height: 7px;width:150px;padding: 10px;border-radius: 20px;" placeholder="Search By Age" >&nbsp;&nbsp;
+	<input type="text" [(ngModel)]="form.department" name="department" style="height: 7px;width:150px;padding: 10px;border-radius: 20px;" placeholder="Search By department" >&nbsp;&nbsp;
+
+	<input type="submit" value="Search" style="padding: 10px;width:100px; border-radius: 20px;" (click)="getList()">
+	<br>
+	<br>
+
+	<form>
+
+		<table id="customers">
+			<tr>
+
+				<th>Sr No</th>
+
+				<!-- <th *ngFor="let e of populate.list;index as i" (click)="sort(e.name)">
+               
+              </th> -->
+				<th>Name</th>
+				<th>Age</th>
+				<th>Department</th>
+				<th>Details</th>
+				<th>Delete</th>
+
+
+			</tr>
+			<tr *ngFor="let e of populate.list ;index as i">
+
+				<td><span >{{i+1}}</span></td>
+				<td><span >{{e?.name}}</span></td>
+				<td><span >{{e?.age}}</span></td>
+				<td><span >{{e?.department}}</span></td>
+				<td><button (click)="edit(e.id)" style="padding:5px;background-color:aqua;">Edit</button></td>
+				<td><button (click)="delete(e.id)" style="padding:5px;background-color:coral;">Delete</button></td>
+
+			</tr>
+
+		</table>
+	</form>
+</div>

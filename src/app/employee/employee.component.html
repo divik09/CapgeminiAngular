@@ -1,0 +1,21 @@
+<div align="center">
+	<div class="card">
+		<h1>Employee Form</h1>
+		<hr>
+		<hr>
+		<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+			<input type="text" formControlName="name" placeholder="Your name..">
+
+
+			<input type="text" formControlName="age"  placeholder="Your Age..">
+
+			<input type="checkbox" [(ngModel)]="check"><br>
+
+			<input type="text" *ngIf="check" formControlName="department" placeholder="Your Department..">
+
+			<input type="submit" value="Submit">
+      </form>
+	</div>
+</div>

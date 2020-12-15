@@ -16,21 +16,21 @@ import { MenuComponent } from "./menu/menu.component";
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path: "employee",
-        component: EmployeeComponent
-      },
-      {
-        path: "employee/:id",
-        component: EmployeeComponent
-      },
-      {
-        path: "employeeList",
-        component: EmployeeListComponent
-      }
-    ])
+    HttpClientModule
+    // RouterModule.forRoot([
+    //   {
+    //     path: "employee",
+    //     component: EmployeeComponent
+    //   },
+    //   {
+    //     path: "employee/:id",
+    //     component: EmployeeComponent
+    //   },
+    //   {
+    //     path: "employeeList",
+    //     component: EmployeeListComponent
+    //   }
+    // ])
   ],
   declarations: [
     AppComponent,
