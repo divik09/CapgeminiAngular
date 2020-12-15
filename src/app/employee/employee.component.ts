@@ -31,7 +31,7 @@ export class EmployeeComponent implements OnInit {
   onSubmit() {
     var _self = this;
     console.log();
-    var url = "http://localhost:9090/api/employees/save";
+    var url = "assets/data/employee.json";
     _self.http.post(url, this.registerForm.value, (res, error) => {
       _self.successMsg = res.message;
       console.log("This is Response==> ", res.message);

@@ -1,6 +1,6 @@
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { debounceTime, distinctUntilChanged, map } from "rxjs/operators";
+import { debounceTime, distinctUntilChanged, map, retry } from "rxjs/operators";
 
 @Injectable()
 export class HttpServiceService {
@@ -20,7 +20,7 @@ export class HttpServiceService {
     return this.httpClient
       .get<any>(endpoint, this.getHeader())
       .pipe(
-        map(event => "Mr " + event.name),
+         retry(3),
         debounceTime(500),
         distinctUntilChanged()
       )
